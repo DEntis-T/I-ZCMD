@@ -30,7 +30,7 @@
  		#error IZCMD ERROR - Please specify custom command prefix using: #define IZCMD_SET_CUSTOM_PREFIX < your_prefix >
  	#endif
 #endif
- 
+
 #if !defined IZCMD_YSI_HOOKING && !defined IZCMD_ALS_HOOKING
  	#error IZCMD ERROR - Please specify function hooking method required for IZCMD. Use #define IZCMD_YSI_HOOKING either #define IZCMD_ALS_HOOKING.
 #endif
@@ -81,6 +81,9 @@
 		#define CPCMD:%1(%2) \
 			forward cpcmd_%1(%2); \
 			public cpcmd_%1(%2)
+
+		#warning IZCMD - Info: Custom prefix feature is currently in beta developement.
+		#warning IZCMD - Info: Please disable IZCMD_CUSTOM_PREFIX to avoid huge bugs!
 
 		#if defined IZCMD_ALS_HOOKING
 		public OnPlayerText(playerid, text[])
