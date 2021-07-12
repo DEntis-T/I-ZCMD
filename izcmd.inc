@@ -41,7 +41,7 @@
 
  	#if !defined _INC_y_commands
  		#warning -------------------------------------------------------------------------
-		#warning IZCMD Warning - Could not find YSI_Visual\y_commands include! 
+		#warning IZCMD Warning - Could not find YSI_Visual\y_hooks include! 
 		#warning To use IZCMD_YSI_HOOKING hooking feature, firstly include YSI on github.com/pawn-lang/YSI-Includes 
  		#warning ... or use IZCMD_ALS_HOOKING feature instead.
 		#warning -------------------------------------------------------------------------
