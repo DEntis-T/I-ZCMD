@@ -3,7 +3,7 @@
 
  This include is just a re-make of the ZCMD Command Processor ( V0.3.1 31/10/2009) originnaly developed by Zeex.
 
- Version: 0.2.3.1 (July 12 2021)
+ Version: 0.2.3.2 (July 12 2021)
 
  GitHub Link: https://github.com/DEntisT-SAMP/I-ZCMD/
 
@@ -21,6 +21,9 @@
 /******************************************************************************************************************************/
 #define MAX_CLIENT_MSG_LENGTH (144)
 #define MAX_FUNC_NAME (32)
+
+#define CMD_SUCCESS 1
+#define CMD_FAILURE 0
 /******************************************************************************************************************************/
 #if defined IZCMD_CUSTOM_PREFIX
 	#if !defined IZCMD_SET_CUSTOM_PREFIX
@@ -127,9 +130,6 @@
 
 #define cmd(%1,%2,%3) \
 			COMMAND:%1(%2, %3)
-
-#define CMD_SUCCESS 1
-#define CMD_FAILURE 0
 
 #if !defined isnull
         #define isnull(%1) ((!(%1[0])) || (((%1[0]) == '\1') && (!(%1[1]))))
