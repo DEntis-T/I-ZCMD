@@ -30,9 +30,11 @@
  		#error IZCMD ERROR - Please specify custom command prefix using: #define IZCMD_SET_CUSTOM_PREFIX < your_prefix >
  	#endif
 #endif
+ 
 #if !defined IZCMD_YSI_HOOKING && !defined IZCMD_ALS_HOOKING
  	#error IZCMD ERROR - Please specify function hooking method required for IZCMD. Use #define IZCMD_YSI_HOOKING either #define IZCMD_ALS_HOOKING.
 #endif
+
 #if defined IZCMD_YSI_HOOKING && defined IZCMD_ALS_HOOKING
  	#error IZCMD ERROR - Please specify function hooking method required for IZCMD. Use #define IZCMD_YSI_HOOKING either #define IZCMD_ALS_HOOKING.
 #endif
@@ -138,6 +140,7 @@
 #if defined OnPlayerCommandReceived
 	forward OnPlayerCommandReceived(playerid,cmdtext[]);
 #endif
+
 #if defined OnPlayerCommandPerformed
 	forward OnPlayerCommandPerformed(playerid,cmdtext[], success);
 #endif
@@ -222,7 +225,7 @@ hook OnPlayerCommandText(playerid,cmdtext[])
 		}
 	#endif
 }
-if defined IZCMD_ALS_HOOKING
+#if defined IZCMD_ALS_HOOKING
 
 	#if defined _ALS_OnPlayerCommandText
 	    #undef OnPlayerCommandText
